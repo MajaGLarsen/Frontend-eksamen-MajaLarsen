@@ -1,0 +1,986 @@
+/*------------------------------------
+    Import af variabler og mixins
+------------------------------------*/
+@import "_var";
+@import "_mixins";
+
+/*----------------
+    Overall css
+----------------*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open sans", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}  
+
+.gamePage, .contactPage, .myProfilePage {
+    padding-top: $mediumSize;
+}
+
+#frontpageBody {
+    background-image: url(../../img/gameFrontPage.png);
+    @include centerBackgroundImage;
+} 
+
+#contactPageBody {
+    background-image: url(../../img/gradientBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:top;
+}
+
+/*-----------------------------------
+                Navbar
+-----------------------------------*/
+.navbar {
+    @include flexSpaceBetween;
+    align-items: center;
+    background: linear-gradient(#091147, #0A52B1);
+    width: $fullScreenWidth;
+    height: $largeSize;
+    margin: 0;
+    .navLeft {
+        display: flex;
+        align-items: center;
+        padding-left: $thirtyPx;
+        a {
+            text-decoration: none;
+            color: $whiteText;
+            font-size: $smallMarginSmallTekst;  
+            .navLogo {
+                width: 130px;
+            }
+        }
+    }
+    .burgerbars {
+        padding-right: $thirtyPx;
+        display: flex;
+        img {
+            width: $thirtyPx !important;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    } 
+    .navRight {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        position: absolute;
+        height: $extraLargesizePx;
+        background-color: #0A52B1;
+        width: $fullScreenWidth;
+        top: 55px !important;
+        display: none;
+        li {
+            list-style-type: none;
+            list-style: none;
+            @include flexCenter;
+            margin: 0 $tinyMarginpx;
+            a {
+                color: $whiteText;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 0.15em;
+                
+                display: inline-block;
+                padding: 5px 10px;
+                position: relative;
+                img {
+                    height: $thirtyPx;
+                }
+              }
+              a:after {    
+                background: none repeat scroll 0 0 transparent;
+                bottom: 0;
+                content: "";
+                display: block;
+                height: 2px;
+                left: $fullScreenWidth/2;
+                position: absolute;
+                background: $whiteText;
+                transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                width: 0;
+              }
+              a:hover:after { 
+                width: $fullScreenWidth; 
+                left: 0; 
+              }
+        }
+    }
+}
+#currentpage {
+    border-bottom: 1px solid $whiteText;
+}
+
+
+
+/*-----------------------------------
+            Login, index
+-----------------------------------*/
+.loginForm {
+    @include flexColumnCenter;
+    width: $smallScreenWidth;
+    justify-content: center;
+    background-color: $grayElementLowOpacity;
+    height: 550px;
+    border-radius: 5px;
+    margin: 15% auto;
+    box-shadow: $boxshadow;
+    .frontPageLogo {
+        width: 40%;
+        margin-bottom: $thirtyPx;
+    }
+    >input {
+        margin: 10px 0;
+        width: $wideScreenWidth;
+        @include inputFields;
+        font-size: $smallMarginSmallTekst;
+    }
+    .loginErrorMessage {
+        color: $errorRed;
+        width: $wideScreenWidth;
+    }
+    &__buttonLogin {
+        @include grayButtons;
+    }
+    div {
+        @include flexSpaceBetween;
+        width: $smallScreenWidth;
+        margin-top: $tinySize;
+    }
+}
+
+
+
+/*-----------------------------------
+        New User
+-----------------------------------*/
+.newUserForm {
+    width: $smallScreenWidth;
+    display: flex;
+    @include flexColumnCenter;
+    background-color: $grayElementLowOpacity; 
+    border-radius: 5px;
+    margin: $mediumSize auto;
+    box-shadow: $boxshadow;
+    padding: 25px 0;
+    h2 {
+        margin-bottom: $mediumSize;
+    }
+    .inputFields {
+        @include flexColumnCenter;
+        width: $smallScreenWidth;
+        >div {
+            width: $fullScreenWidth !important;
+            @include flexColumnCenter;
+        }
+        input {
+            width: $fullScreenWidth !important;
+            @include inputFields;
+            margin-bottom: $smallMarginSmallTekst;
+        }
+        .imgContainers {
+            @include flexSpaceBetween;
+            img {
+                width: 22%;
+                margin-bottom: 5px;
+                &:hover {
+                    cursor: pointer;
+                    opacity: 70%;
+                }
+            }            
+        }
+    }
+    .newUserButton {
+        width: $fullScreenWidth;
+        @include flexColumnCenter;
+        justify-content: center;
+        .createNewUserBtn {
+            @include greenButtons;
+        }
+        .cancelNewUser { //button
+            width: $extraLargesizePx/2 !important;
+            @include grayButtons;
+            a {
+                text-decoration: none;
+                color: $whiteText;
+                width: $fullScreenWidth;
+                height: $fullScreenWidth;
+                @include flexCenter;
+            }
+        }
+    }
+}
+
+
+
+/*-----------------------------------
+                Game
+-----------------------------------*/
+.gamePage {
+    @include flexColumnCenter;
+    .game {
+        width: $gameSquareTiny;
+        margin-bottom: $thirtyPx;
+        .gameNavbar {
+            @include flexSpaceBetween;
+            background-color: #095816;
+            color: $whiteText;
+            @include flexCenter;
+            height: 60px;
+        }
+    }
+    .gameProfile-andButtons-Container {
+        width: $gameSquareTiny;
+        background-color: $GrayElementVeryLowOpacity;
+        padding-bottom: $tinyMarginpx;
+        display: flex;
+        >div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: $fullScreenWidth/2;
+            .gameControls {
+                width: $fullScreenWidth;
+                @include flexColumnNoCenter;
+                align-items: center;
+                justify-content: center;   
+                padding-right: 2px;
+                div {
+                    width: $fullScreenWidth;
+                    @include flexCenter;
+                    .controlKey {
+                        height: $mediumSize;
+                        width: $mediumSize;
+                        margin: 2px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #b1927e;
+                        border: 1px solid #7e5b4b;
+                        box-shadow: $boxshadow;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #9e7e69;
+                        }
+                    }
+                }
+            }
+        }
+        .gameButtons {
+            @include flexColumnCenter;
+            .showHideKeysBtn, .highscoreBtn, .submitScoreBtn, .showHelpBtn {
+                @include grayButtons;
+                margin: 5px 0 !important;
+            }
+            .submitScoreBtn {
+                background-color: #ccc;
+                &:hover {
+                    cursor: default;
+                    background-color: #ccc;
+                }
+            }
+            .greenButton {
+                @include greenButtons;
+            }
+        }
+    }
+    .allTimeHighscoresPopUp {
+        @include flexColumnCenter;
+        @include highscoreList;
+        margin: auto;
+        position: absolute;
+        display: none;
+        .allTimeHighscoreRowPopUp {
+            @include flexSpaceBetween;
+            width: $smallScreenWidth;
+            border-bottom: 1px solid #ccc;
+            .allTimeRank {
+                width: $tinySize;
+            }
+            .allTimeScore, .allTimeDate {
+                width: 30%;
+                text-align: center;
+            }
+            .allTimeDate {
+                width: 30%;
+                text-align: right;
+            }
+        }
+        #closeHighscoreBtn {
+            @include grayButtons;
+            width: $extraLargesizePx/2;
+        }
+    }
+    /*---------------------
+        Actual game
+    ---------------------*/
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    } 
+    canvas {
+        box-shadow: $boxshadow;
+        
+    }
+    .deathContainer {
+        position: absolute;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        top: 210px;
+    }
+    #deadText {
+        color: #e76363;
+        font-size: 20px;
+        padding-bottom: $smallMarginSmallTekst;
+    }
+    #finalScore {
+        color: #bd6b6b;
+        padding-bottom: $smallMarginSmallTekst;
+    }
+    .gameSubmitButton {
+        display: none;
+        width: 240px;
+        height: 50px;
+        background-color: #d39e9e;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px $smallMarginSmallTekst #290101;
+        color: rgb(41, 1, 1);
+        font-size: $smallMarginSmallTekst;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #e7c3c3;
+    }
+    #submitScore {
+        display: none;
+        margin-top: $thirtyPx;
+        width: 240px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #submitScore #scoreName {
+        width: 150px;
+        height: $thirtyPx;
+    }
+    #submitScore #scoreSubmit {
+        width: 70px;
+        height: 35px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px $smallMarginSmallTekst #290101;
+        color: rgb(41, 1, 1);
+        cursor: pointer;
+        background-color: #d39e9e;
+    }
+    /*Help Pop up*/
+    .helpPopUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $grayElementHighOpacity;
+        border-radius: 10px;
+        position: absolute;
+        margin-top: $mediumSize;
+        width: $smallScreenWidth;
+        display: none;
+        p {
+            width: $smallScreenWidth;
+        }
+        button {
+            @include grayButtons;
+            height: 35px !important;
+            margin: $thirtyPx;
+        }
+    }
+}
+
+
+/*-----------------------------------
+                About
+-----------------------------------*/
+.aboutPage {
+    @include flexColumnCenter;
+    .aboutMasthead {
+        width: $fullScreenWidth;
+        height:300px;
+        background-image: url(../../img/chickenBanner.png);
+        @include backgroundImage;
+        @include flexCenter;
+        margin-bottom: $mediumSize;
+        box-shadow: $boxshadow;
+    }
+    .aboutSection {
+        width: $smallScreenWidth;
+        @include flexColumnCenter;
+        p, h2 { 
+            width: $smallScreenWidth;       
+            text-align: center;     
+        }
+        img {
+            width: $fullScreenWidth;
+            box-shadow: $boxshadow;
+            margin-bottom: $smallMediumSize;
+        }
+    }
+    .allTimeHighscores {
+        @include highscoreList;
+        @include flexColumnCenter;
+        .allTimeHighscoreRow {
+            @include flexSpaceBetween;
+            width: $smallScreenWidth;
+            padding: 0 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    }
+}
+
+/*-----------------------------------
+            Contact
+-----------------------------------*/
+.contactPage {
+    @include flexColumnCenter;
+    .contactContainer {
+        @include flexColumnNoCenter;
+        width: $smallScreenWidth;
+        box-shadow: $boxshadow;
+        margin-bottom: $largeSize;
+        margin-top: $mediumSize;
+        .contactForm {
+            @include flexColumnCenter;
+            width: $fullScreenWidth;
+            background-color: $grayElementLowOpacity; 
+            height: 550px;
+            input { //både input og buttons
+                width: $smallScreenWidth;
+                margin: $tinyMarginpx 0;
+                @include inputFields;
+                cursor: pointer;
+            }
+            textarea {
+                width: $smallScreenWidth;
+                max-width: $smallScreenWidth;
+                min-width: $smallScreenWidth;
+                height: $extraLargesizePx/2;
+                max-height: 300px;
+                min-height: $extraLargesizePx/2;
+                margin: $tinyMarginpx 0;
+            }
+            .sendButton {
+                @include grayButtons;
+            }
+        }
+        .contactImg {
+            width: $fullScreenWidth;
+            height: $extraLargesizePx;
+            background-image: url(../../img/gameFrontPage.png);
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+
+
+
+
+
+/*-----------------------------------
+        My profile
+-----------------------------------*/
+.myProfilePage {
+    @include flexColumnCenter;
+    .myProfile {
+        @include flexColumnNoCenter;
+        width: $smallScreenWidth;
+        background-color: $GrayElementVeryLowOpacity;
+        padding: $thirtyPx;
+        border-radius: 10px;
+        .myProfileLeft {
+            @include flexColumnCenter;
+            width: $fullScreenWidth;
+            justify-content: center;
+            img {
+                width: $wideScreenWidth;
+                margin: 0 0 $smallMarginSmallTekst 0;
+            }
+            button {
+                margin-bottom: $smallMarginSmallTekst;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .myProfileRight {
+            @include flexColumnNoCenter;
+            padding-left: 5%;
+            width: $fullScreenWidth;
+            text-align: center;
+        }
+    }
+    .redButton {
+        @include redButtons;
+        font-size: $tinyMarginpx !important;
+        height: $smallMediumSize;
+        margin: 10px auto;
+    }
+    .grayButton {
+        @include grayButtons;
+        font-size: $tinyMarginpx !important;
+        height: $smallMediumSize;
+        margin: 10px auto;
+    }
+    .yourHighscore {
+        @include highscoreList;
+        @include flexColumnCenter;
+        .yourHighscoreHeading {
+            @include flexSpaceBetween;
+        }
+        .yourEveryHighscore {
+            @include flexSpaceBetween;
+            width: $smallScreenWidth;
+            border-bottom: 1px solid #ccc;
+            padding: 0 10px;
+            .yourEveryHighscoreRank {
+                width: $tinySize;
+            }
+            .yourEveryHighscoreScore, .yourEveryHighscoreDate {
+                width: $smallWidth*2;
+            }
+            .yourEveryHighscoreDate {
+                text-align: right;
+            }
+        }
+    }
+}
+/*Delete profile*/
+.deleteProfile {
+    width: $smallScreenWidth;
+    background-color: $grayElementHighOpacity;
+    border-radius: 10px;
+    @include flexColumnCenter;
+    position: absolute;
+    margin-top: 100px;
+    h2 {
+        margin-top: $mediumSize;
+    }
+    .confirmDeleteProfile {
+        display: flex;
+        justify-content: space-evenly;
+        margin: $thirtyPx 0;
+        width: $smallScreenWidth;
+    }
+}
+
+/*Update profile*/
+.myProfileForm {
+    width: $fullScreenWidth;
+    .updateProfile {
+        width: $smallScreenWidth;
+        @include flexColumnCenter;
+        justify-content: center;
+        background-color: $grayElementHighOpacity; 
+        border-radius: 5px;
+        margin: auto;
+        box-shadow: $boxshadow;
+        padding: 25px 0;
+        position: absolute;
+        h2 {
+            margin-bottom: $mediumSize;
+        }
+        .updateProfile-inputFields {
+            @include flexColumnCenter;
+            width: $smallScreenWidth;
+            >div {
+                width: $fullScreenWidth !important;
+                @include flexColumnCenter;
+            }
+            input {
+                width: $fullScreenWidth !important;
+                @include inputFields;
+                margin-bottom: $smallMarginSmallTekst;
+            }
+            .imgContainers {
+                @include flexSpaceBetween;
+                img {
+                    width: $smallWidth;
+                    margin-bottom: 5px;
+                    opacity: 65%;
+                    &:hover {
+                        opacity: $fullScreenWidth;
+                        cursor: pointer; 
+                        background-color: rgb(207, 207, 207);                    
+                    }
+                }            
+            }
+        }
+        >input { //button
+            width: $extraLargesizePx/2 !important;
+            @include grayButtons;
+        }
+    }
+}
+
+
+/*-----------------------------------
+            Footer
+-----------------------------------*/
+footer {
+    @include flexColumnCenter;
+    width: $fullScreenWidth;
+    margin-top: $largeSize;
+    .footerFence {
+        height: 165px;
+        width: $fullScreenWidth;
+        display: flex;
+        align-items: flex-end;
+        background-image: url(../../img/fence2.png);
+        @include backgroundImage;
+        margin-bottom: -6px;
+    }
+    .footerDiv {
+        @include flexColumnCenter;
+        justify-content: center;
+        color: $whiteText;
+        height: 250px;
+        width: $fullScreenWidth;
+        background: linear-gradient(#5C4033, #3d271d);
+        img {
+            width: $fullScreenWidth/2;
+        }
+    }
+}
+
+
+/*-----------------------------------
+        media query min: 600
+-----------------------------------*/
+@media screen and(min-width: 600px) {
+    //Login front page, index
+    .loginForm {
+        width: $smallScreenWidth;
+    }
+    //game page
+    .gamePage {
+        .game {
+            width: $gameSquare;
+            .gameNavbar {
+                width: $gameSquare;
+            }  
+        }
+        .gameProfile-andButtons-Container {
+            width: $gameSquare;
+            div {
+                width: $fullScreenWidth/2;
+            }
+            .gameButtons {
+                @include flexColumnCenter;
+                .showHideKeysBtn, .highscoreBtn, .submitScoreBtn, .showHelpBtn {
+                    margin: 10px 0 0 0!important;
+                }
+            }
+        }
+    }
+    //My profile
+    .myProfilePage {
+        .myProfile {
+            flex-direction: row;
+            .myProfileLeft {
+                width: $fullScreenWidth/2;
+                img {
+                    width: $wideScreenWidth;
+                }
+            }
+            .myProfileRight {
+                width: $fullScreenWidth/2;
+                text-align: left;
+                .grayButton, .redButton {
+                    margin: 10px 0!important;
+                }
+            }
+        }
+    }
+}
+
+
+/*-----------------------------------
+        media query min: 900
+-----------------------------------*/
+@media screen and(min-width: 900px) {
+    .navbar {
+        @include flexSpaceBetween;
+        .burgerbars {
+            display: none;
+        }
+        .navRight {
+            display: flex;
+            justify-content: flex-end; 
+            background: none;
+            position: relative;
+            top: 0 !important;
+            flex-direction: row;
+            height: initial;
+            width: initial;
+        
+        }
+    }
+    
+    //Login page
+    .loginForm {
+        width: $wideScreenWidth;
+    }
+    //new user
+    .imgContainers {
+        img {
+            width: 15% !important;
+            margin-bottom: $smallMediumSize !important;
+        }
+    }
+    .newUserButton {
+        flex-direction: row !important;
+        justify-content: space-evenly !important;
+    }
+
+    //Game page 
+    .gamePage {
+        .game {
+            margin-bottom: 0;
+            width: $largeGameSquare;
+            .gameNavbar {
+                width: $largeGameSquare;
+            }   
+        }
+        .gameProfile-andButtons-Container {
+            width: $largeGameSquare;
+        }
+        .gameProfile-andButtons-Container {
+            >div {
+                .gameControls {
+                    display: none;
+                }
+            }
+        }
+        .helpPopUp {
+            width: $wideScreenWidth;
+            margin-top: 0 !important;
+        }
+    }
+
+
+    //About page
+    .aboutPage {
+        @include flexColumnCenter;
+        .aboutSection {
+            width: $wideScreenWidth;
+            p, h2 { 
+                width: $wideScreenWidth;       
+                text-align: center;     
+            }
+        }
+        
+        .allTimeHighscores {
+            width: $wideScreenWidth;
+        }
+    }
+
+    //Contact
+    .contactPage {
+        .contactContainer {
+            flex-direction: row;
+            width: $largeGameSquare;
+            .contactForm {
+                width: $fullScreenWidth/2;
+            }
+            .contactImg {
+                width: $fullScreenWidth/2;
+                height: 550px;
+            }
+        }
+    }
+    //Update profil
+    .imgContainers {
+        img {
+            width: 15% !important;
+            margin-bottom: $smallMediumSize !important;
+        }  
+    }   
+
+    //Footer
+    .footerDiv {
+        img {
+            width: 30% !important;
+        }
+    }
+}
+
+/*-----------------------------------
+        media query min: 1200px
+-----------------------------------*/
+@media screen and(min-width: 1200px) {
+    .loginForm {
+        width: 55%;
+        margin: 12% auto;
+    }
+    //New user
+    .newUserForm {
+        width: $smallScreenWidth;
+        @include flexColumnNoCenter;
+        .inputFields {
+            flex-direction: row;
+            @include flexSpaceBetween;
+            align-items: flex-start;
+            >div {
+                width: 48% !important;
+                @include flexSpaceBetween;
+                height: $extraLargesizePx;
+                h3 {
+                    margin-top: 10px;
+                }
+                input {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .imgContainers {
+            justify-content: space-around !important;
+            img {
+                width: 15%;
+                margin-bottom: $smallMarginSmallTekst !important;
+            }            
+        }
+        input {
+            font-size: $smallMarginSmallTekst !important;
+        }
+    }
+    
+    //game page
+    .gamePage {
+        flex-direction: row;
+        justify-content: center;
+        .gameProfile-andButtons-Container {
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            height: $largeGameSquare + 60px;
+            margin-left: $smallMarginSmallTekst;
+            width: 220px;
+            .game-profileInfo {
+                width: $fullScreenWidth;
+                margin-bottom: 50px;
+                @include flexCenter;
+                flex-direction: column;
+            }
+            .gameButtons {
+                width: $fullScreenWidth;
+                justify-content: flex-end;
+            }
+        }
+        .helpPopUp {
+            width: 40%;
+            top: $extraLargesizePx/2 !important;
+        }
+    }
+
+    //Contact Page
+    .contactPage {
+        .contactContainer {
+            width: $wideScreenWidth;
+        }
+    }
+
+    //My profile
+    .myProfilePage {
+        .myProfile {
+            width: $wideScreenWidth;
+        }
+        .deleteProfile {
+            width: $wideScreenWidth;
+        }
+    }
+    //update profile 
+    .myProfileForm {
+        .updateProfile {
+            width: $wideScreenWidth !important;
+            @include flexColumnNoCenter;
+            .updateProfile-inputFields {
+                flex-direction: row;
+                @include flexSpaceBetween;
+                align-items: flex-start;
+                >div {
+                    width: 48% !important;
+                    @include flexSpaceBetween;
+                    height: $extraLargesizePx;
+                    h3 {
+                        margin-top: 10px;
+                    }
+                    input {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+            .imgContainers {
+                justify-content: space-around !important;
+                img {
+                    width: 15%;
+                    margin-bottom: $smallMarginSmallTekst !important;
+                }            
+            }
+            >input {
+                font-size: $smallMarginSmallTekst !important;
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+        media query min: 1600
+-----------------------------------*/
+@media screen and(min-width: 1600px) {
+    //Login, index
+    .loginForm {
+        width: 35%;
+        margin: 9% auto;
+    }
+    //New user
+    .newUserForm {
+        width: $wideScreenWidth;
+        .imgContainers {
+            img {
+                width: 12%!important;
+                margin-bottom: $smallMarginSmallTekst !important;
+            }            
+        }
+    }
+    //Update profile
+    .myProfileForm {
+        .updateProfile {
+            .imgContainers {
+                img {
+                    width: 12%!important;
+                    margin-bottom: $smallMarginSmallTekst !important;
+                }            
+            }
+        }
+    }
+    //Footer 
+    .footerDiv {
+        img {
+            width: $smallWidth !important;
+        }
+    }
+}
+

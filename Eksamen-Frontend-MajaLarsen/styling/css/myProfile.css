@@ -1,0 +1,113 @@
+/*------------------------
+        My profile
+------------------------*/
+.myProfilePage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.myProfilePage .myProfile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  border: 1px solid blue;
+}
+
+.myProfilePage .myProfile .myProfileLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  border: 1px solid red;
+}
+
+.myProfilePage .myProfile .myProfileLeft img {
+  height: 300px;
+  width: 250px;
+  margin: 0 0 20px 0;
+  border: 1px solid blue;
+}
+
+.myProfilePage .myProfile .myProfileLeft button {
+  margin-bottom: 20px;
+}
+
+.myProfilePage .myProfile .myProfileLeft button:hover {
+  cursor: pointer;
+}
+
+.myProfilePage .myProfile .myProfileRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 5%;
+  width: 50%;
+  border: 1px solid green;
+}
+
+.myProfilePage .myProfile .myProfileRight button {
+  border: none;
+  background: none;
+  border-bottom: 1px solid #fff;
+}
+
+.myProfilePage .myProfile .myProfileRight button:hover {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+}
+
+.myProfilePage .yourHighscore {
+  width: 80%;
+  background-color: rgba(207, 207, 207, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 70px;
+  border-radius: 10px;
+  margin: 50px 0;
+}
+
+.myProfilePage .yourHighscore .yourEveryHighscore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  border-bottom: 1px solid gray;
+}
+
+@media screen and (min-width: 1200px) {
+  .myProfilePage .myProfile, .myProfilePage .yourHighscore {
+    width: 800px;
+    color: red;
+  }
+}

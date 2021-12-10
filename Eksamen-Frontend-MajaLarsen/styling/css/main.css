@@ -1,0 +1,1765 @@
+/*------------------------------------
+    Import af variabler og mixins
+------------------------------------*/
+/*Colours*/
+/*Percentage*/
+/*Pixels*/
+/*Game sizes*/
+/*------------------------------
+        mixins with flex
+------------------------------*/
+/*------------------------------
+        BackgroundImages
+------------------------------*/
+/*------------------------------
+        Inputs and buttons
+------------------------------*/
+/*------------------------------
+        Highscore lists
+------------------------------*/
+/*----------------
+    Overall css
+----------------*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Open sans", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.gamePage, .contactPage, .myProfilePage {
+  padding-top: 50px;
+}
+
+#frontpageBody {
+  background-image: url(../../img/gameFrontPage.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#contactPageBody {
+  background-image: url(../../img/gradientBackground.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+/*-----------------------------------
+                Navbar
+-----------------------------------*/
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#091147), to(#0A52B1));
+  background: linear-gradient(#091147, #0A52B1);
+  width: 100%;
+  height: 75px;
+  margin: 0;
+}
+
+.navbar .navLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 30px;
+}
+
+.navbar .navLeft a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.navbar .navLeft a .navLogo {
+  width: 130px;
+}
+
+.navbar .burgerbars {
+  padding-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .burgerbars img {
+  width: 30px !important;
+}
+
+.navbar .burgerbars img:hover {
+  cursor: pointer;
+}
+
+.navbar .navRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  height: 400px;
+  background-color: #0A52B1;
+  width: 100%;
+  top: 55px !important;
+  display: none;
+}
+
+.navbar .navRight li {
+  list-style-type: none;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 15px;
+}
+
+.navbar .navRight li a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.navbar .navRight li a img {
+  height: 30px;
+}
+
+.navbar .navRight li a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.navbar .navRight li a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+#currentpage {
+  border-bottom: 1px solid #fff;
+}
+
+/*-----------------------------------
+            Login, index
+-----------------------------------*/
+.loginForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 550px;
+  border-radius: 5px;
+  margin: 15% auto;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+}
+
+.loginForm .frontPageLogo {
+  width: 40%;
+  margin-bottom: 30px;
+}
+
+.loginForm > input {
+  margin: 10px 0;
+  width: 60%;
+  height: 50px;
+  border: 1px solid gray;
+  padding-left: 10px;
+  margin: 10px 0;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+.loginForm .loginErrorMessage {
+  color: #be0000;
+  width: 60%;
+}
+
+.loginForm__buttonLogin {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+}
+
+.loginForm__buttonLogin:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.loginForm div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin-top: 10%;
+}
+
+/*-----------------------------------
+        New User
+-----------------------------------*/
+.newUserForm {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  margin: 50px auto;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  padding: 25px 0;
+}
+
+.newUserForm h2 {
+  margin-bottom: 50px;
+}
+
+.newUserForm .inputFields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+.newUserForm .inputFields > div {
+  width: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newUserForm .inputFields input {
+  width: 100% !important;
+  height: 50px;
+  border: 1px solid gray;
+  padding-left: 10px;
+  margin: 10px 0;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.newUserForm .inputFields .imgContainers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.newUserForm .inputFields .imgContainers img {
+  width: 22%;
+  margin-bottom: 5px;
+}
+
+.newUserForm .inputFields .imgContainers img:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.newUserForm .newUserButton {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.newUserForm .newUserButton .createNewUserBtn {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+  background-color: #007c44;
+}
+
+.newUserForm .newUserButton .createNewUserBtn:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.newUserForm .newUserButton .createNewUserBtn:hover {
+  background-color: #005730;
+}
+
+.newUserForm .newUserButton .cancelNewUser {
+  width: 200px !important;
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+}
+
+.newUserForm .newUserButton .cancelNewUser:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.newUserForm .newUserButton .cancelNewUser a {
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*-----------------------------------
+                Game
+-----------------------------------*/
+.gamePage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*---------------------
+        Actual game
+    ---------------------*/
+  /*Help Pop up*/
+}
+
+.gamePage .game {
+  width: 350px;
+  margin-bottom: 30px;
+}
+
+.gamePage .game .gameNavbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #095816;
+  color: #fff;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+}
+
+.gamePage .gameProfile-andButtons-Container {
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gamePage .gameProfile-andButtons-Container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+}
+
+.gamePage .gameProfile-andButtons-Container > div .gameControls {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-right: 2px;
+}
+
+.gamePage .gameProfile-andButtons-Container > div .gameControls div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gamePage .gameProfile-andButtons-Container > div .gameControls div .controlKey {
+  height: 50px;
+  width: 50px;
+  margin: 2px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #b1927e;
+  border: 1px solid #7e5b4b;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+}
+
+.gamePage .gameProfile-andButtons-Container > div .gameControls div .controlKey:hover {
+  cursor: pointer;
+  background-color: #9e7e69;
+}
+
+.gamePage .gameProfile-andButtons-Container .gameButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gamePage .gameProfile-andButtons-Container .gameButtons .showHideKeysBtn, .gamePage .gameProfile-andButtons-Container .gameButtons .highscoreBtn, .gamePage .gameProfile-andButtons-Container .gameButtons .submitScoreBtn, .gamePage .gameProfile-andButtons-Container .gameButtons .showHelpBtn {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+  margin: 5px 0 !important;
+}
+
+.gamePage .gameProfile-andButtons-Container .gameButtons .showHideKeysBtn:hover, .gamePage .gameProfile-andButtons-Container .gameButtons .highscoreBtn:hover, .gamePage .gameProfile-andButtons-Container .gameButtons .submitScoreBtn:hover, .gamePage .gameProfile-andButtons-Container .gameButtons .showHelpBtn:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.gamePage .gameProfile-andButtons-Container .gameButtons .submitScoreBtn {
+  background-color: #ccc;
+}
+
+.gamePage .gameProfile-andButtons-Container .gameButtons .submitScoreBtn:hover {
+  cursor: default;
+  background-color: #ccc;
+}
+
+.gamePage .gameProfile-andButtons-Container .gameButtons .greenButton {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+  background-color: #007c44;
+}
+
+.gamePage .gameProfile-andButtons-Container .gameButtons .greenButton:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.gamePage .gameProfile-andButtons-Container .gameButtons .greenButton:hover {
+  background-color: #005730;
+}
+
+.gamePage .allTimeHighscoresPopUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  padding-bottom: 75px;
+  padding-top: 20px;
+  border-radius: 10px;
+  margin: 50px 0;
+  padding-top: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  margin: auto;
+  position: absolute;
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .gamePage .allTimeHighscoresPopUp {
+    width: 60% !important;
+  }
+}
+
+.gamePage .allTimeHighscoresPopUp .allTimeHighscoreRowPopUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  border-bottom: 1px solid #ccc;
+}
+
+.gamePage .allTimeHighscoresPopUp .allTimeHighscoreRowPopUp .allTimeRank {
+  width: 10%;
+}
+
+.gamePage .allTimeHighscoresPopUp .allTimeHighscoreRowPopUp .allTimeScore, .gamePage .allTimeHighscoresPopUp .allTimeHighscoreRowPopUp .allTimeDate {
+  width: 30%;
+  text-align: center;
+}
+
+.gamePage .allTimeHighscoresPopUp .allTimeHighscoreRowPopUp .allTimeDate {
+  width: 30%;
+  text-align: right;
+}
+
+.gamePage .allTimeHighscoresPopUp #closeHighscoreBtn {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+  width: 200px;
+}
+
+.gamePage .allTimeHighscoresPopUp #closeHighscoreBtn:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.gamePage .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.gamePage canvas {
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+}
+
+.gamePage .deathContainer {
+  position: absolute;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 210px;
+}
+
+.gamePage #deadText {
+  color: #e76363;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.gamePage #finalScore {
+  color: #bd6b6b;
+  padding-bottom: 20px;
+}
+
+.gamePage .gameSubmitButton {
+  display: none;
+  width: 240px;
+  height: 50px;
+  background-color: #d39e9e;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 20px #290101;
+          box-shadow: 2px 2px 20px #290101;
+  color: #290101;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.gamePage button:hover {
+  background-color: #e7c3c3;
+}
+
+.gamePage #submitScore {
+  display: none;
+  margin-top: 30px;
+  width: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.gamePage #submitScore #scoreName {
+  width: 150px;
+  height: 30px;
+}
+
+.gamePage #submitScore #scoreSubmit {
+  width: 70px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 20px #290101;
+          box-shadow: 2px 2px 20px #290101;
+  color: #290101;
+  cursor: pointer;
+  background-color: #d39e9e;
+}
+
+.gamePage .helpPopUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  position: absolute;
+  margin-top: 50px;
+  width: 80%;
+  display: none;
+}
+
+.gamePage .helpPopUp p {
+  width: 80%;
+}
+
+.gamePage .helpPopUp button {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+  height: 35px !important;
+  margin: 30px;
+}
+
+.gamePage .helpPopUp button:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+/*-----------------------------------
+                About
+-----------------------------------*/
+.aboutPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aboutPage .aboutMasthead {
+  width: 100%;
+  height: 300px;
+  background-image: url(../../img/chickenBanner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+}
+
+.aboutPage .aboutSection {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aboutPage .aboutSection p, .aboutPage .aboutSection h2 {
+  width: 80%;
+  text-align: center;
+}
+
+.aboutPage .aboutSection img {
+  width: 100%;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  margin-bottom: 40px;
+}
+
+.aboutPage .allTimeHighscores {
+  width: 80%;
+  padding-bottom: 75px;
+  padding-top: 20px;
+  border-radius: 10px;
+  margin: 50px 0;
+  padding-top: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .aboutPage .allTimeHighscores {
+    width: 60% !important;
+  }
+}
+
+.aboutPage .allTimeHighscores .allTimeHighscoreRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  padding: 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/*-----------------------------------
+            Contact
+-----------------------------------*/
+.contactPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contactPage .contactContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  margin-bottom: 75px;
+  margin-top: 50px;
+}
+
+.contactPage .contactContainer .contactForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 550px;
+}
+
+.contactPage .contactContainer .contactForm input {
+  width: 80%;
+  margin: 15px 0;
+  height: 50px;
+  border: 1px solid gray;
+  padding-left: 10px;
+  margin: 10px 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.contactPage .contactContainer .contactForm textarea {
+  width: 80%;
+  max-width: 80%;
+  min-width: 80%;
+  height: 200px;
+  max-height: 300px;
+  min-height: 200px;
+  margin: 15px 0;
+}
+
+.contactPage .contactContainer .contactForm .sendButton {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+}
+
+.contactPage .contactContainer .contactForm .sendButton:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.contactPage .contactContainer .contactImg {
+  width: 100%;
+  height: 400px;
+  background-image: url(../../img/gameFrontPage.png);
+  background-size: cover;
+  background-position: center;
+}
+
+/*-----------------------------------
+        My profile
+-----------------------------------*/
+.myProfilePage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.myProfilePage .myProfile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.myProfilePage .myProfile .myProfileLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.myProfilePage .myProfile .myProfileLeft img {
+  width: 60%;
+  margin: 0 0 20px 0;
+}
+
+.myProfilePage .myProfile .myProfileLeft button {
+  margin-bottom: 20px;
+}
+
+.myProfilePage .myProfile .myProfileLeft button:hover {
+  cursor: pointer;
+}
+
+.myProfilePage .myProfile .myProfileRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.myProfilePage .redButton {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+  background-color: #7c0000;
+  font-size: 15px !important;
+  height: 40px;
+  margin: 10px auto;
+}
+
+.myProfilePage .redButton:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.myProfilePage .redButton:hover {
+  background-color: #680101;
+}
+
+.myProfilePage .grayButton {
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+  font-size: 15px !important;
+  height: 40px;
+  margin: 10px auto;
+}
+
+.myProfilePage .grayButton:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+.myProfilePage .yourHighscore {
+  width: 80%;
+  padding-bottom: 75px;
+  padding-top: 20px;
+  border-radius: 10px;
+  margin: 50px 0;
+  padding-top: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .myProfilePage .yourHighscore {
+    width: 60% !important;
+  }
+}
+
+.myProfilePage .yourHighscore .yourHighscoreHeading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.myProfilePage .yourHighscore .yourEveryHighscore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  border-bottom: 1px solid #ccc;
+  padding: 0 10px;
+}
+
+.myProfilePage .yourHighscore .yourEveryHighscore .yourEveryHighscoreRank {
+  width: 10%;
+}
+
+.myProfilePage .yourHighscore .yourEveryHighscore .yourEveryHighscoreScore, .myProfilePage .yourHighscore .yourEveryHighscore .yourEveryHighscoreDate {
+  width: 40%;
+}
+
+.myProfilePage .yourHighscore .yourEveryHighscore .yourEveryHighscoreDate {
+  text-align: right;
+}
+
+/*Delete profile*/
+.deleteProfile {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  margin-top: 100px;
+}
+
+.deleteProfile h2 {
+  margin-top: 50px;
+}
+
+.deleteProfile .confirmDeleteProfile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 30px 0;
+  width: 80%;
+}
+
+/*Update profile*/
+.myProfileForm {
+  width: 100%;
+}
+
+.myProfileForm .updateProfile {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  margin: auto;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  padding: 25px 0;
+  position: absolute;
+}
+
+.myProfileForm .updateProfile h2 {
+  margin-bottom: 50px;
+}
+
+.myProfileForm .updateProfile .updateProfile-inputFields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+.myProfileForm .updateProfile .updateProfile-inputFields > div {
+  width: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.myProfileForm .updateProfile .updateProfile-inputFields input {
+  width: 100% !important;
+  height: 50px;
+  border: 1px solid gray;
+  padding-left: 10px;
+  margin: 10px 0;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.myProfileForm .updateProfile .updateProfile-inputFields .imgContainers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.myProfileForm .updateProfile .updateProfile-inputFields .imgContainers img {
+  width: 20%;
+  margin-bottom: 5px;
+  opacity: 65%;
+}
+
+.myProfileForm .updateProfile .updateProfile-inputFields .imgContainers img:hover {
+  opacity: 100%;
+  cursor: pointer;
+  background-color: #cfcfcf;
+}
+
+.myProfileForm .updateProfile > input {
+  width: 200px !important;
+  border-radius: 8px;
+  border: none !important;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 12px #49494963;
+          box-shadow: 2px 2px 12px #49494963;
+  background-color: #464646;
+  height: 50px;
+  color: #fff;
+  width: 200px !important;
+  margin: 40px 0;
+}
+
+.myProfileForm .updateProfile > input:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+}
+
+/*-----------------------------------
+            Footer
+-----------------------------------*/
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 75px;
+}
+
+footer .footerFence {
+  height: 165px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-image: url(../../img/fence2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: -6px;
+}
+
+footer .footerDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  height: 250px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5C4033), to(#3d271d));
+  background: linear-gradient(#5C4033, #3d271d);
+}
+
+footer .footerDiv img {
+  width: 50%;
+}
+
+/*-----------------------------------
+        media query min: 600
+-----------------------------------*/
+@media screen and (min-width: 600px) {
+  .loginForm {
+    width: 80%;
+  }
+  .gamePage .game {
+    width: 500px;
+  }
+  .gamePage .game .gameNavbar {
+    width: 500px;
+  }
+  .gamePage .gameProfile-andButtons-Container {
+    width: 500px;
+  }
+  .gamePage .gameProfile-andButtons-Container div {
+    width: 50%;
+  }
+  .gamePage .gameProfile-andButtons-Container .gameButtons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .gamePage .gameProfile-andButtons-Container .gameButtons .showHideKeysBtn, .gamePage .gameProfile-andButtons-Container .gameButtons .highscoreBtn, .gamePage .gameProfile-andButtons-Container .gameButtons .submitScoreBtn, .gamePage .gameProfile-andButtons-Container .gameButtons .showHelpBtn {
+    margin: 10px 0 0 0 !important;
+  }
+  .myProfilePage .myProfile {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .myProfilePage .myProfile .myProfileLeft {
+    width: 50%;
+  }
+  .myProfilePage .myProfile .myProfileLeft img {
+    width: 60%;
+  }
+  .myProfilePage .myProfile .myProfileRight {
+    width: 50%;
+    text-align: left;
+  }
+  .myProfilePage .myProfile .myProfileRight .grayButton, .myProfilePage .myProfile .myProfileRight .redButton {
+    margin: 10px 0 !important;
+  }
+}
+
+/*-----------------------------------
+        media query min: 900
+-----------------------------------*/
+@media screen and (min-width: 900px) {
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar .burgerbars {
+    display: none;
+  }
+  .navbar .navRight {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    background: none;
+    position: relative;
+    top: 0 !important;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: initial;
+    width: initial;
+  }
+  .loginForm {
+    width: 60%;
+  }
+  .imgContainers img {
+    width: 15% !important;
+    margin-bottom: 40px !important;
+  }
+  .newUserButton {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -webkit-box-pack: space-evenly !important;
+        -ms-flex-pack: space-evenly !important;
+            justify-content: space-evenly !important;
+  }
+  .gamePage .game {
+    margin-bottom: 0;
+    width: 700px;
+  }
+  .gamePage .game .gameNavbar {
+    width: 700px;
+  }
+  .gamePage .gameProfile-andButtons-Container {
+    width: 700px;
+  }
+  .gamePage .gameProfile-andButtons-Container > div .gameControls {
+    display: none;
+  }
+  .gamePage .helpPopUp {
+    width: 60%;
+    margin-top: 0 !important;
+  }
+  .aboutPage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .aboutPage .aboutSection {
+    width: 60%;
+  }
+  .aboutPage .aboutSection p, .aboutPage .aboutSection h2 {
+    width: 60%;
+    text-align: center;
+  }
+  .aboutPage .allTimeHighscores {
+    width: 60%;
+  }
+  .contactPage .contactContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 700px;
+  }
+  .contactPage .contactContainer .contactForm {
+    width: 50%;
+  }
+  .contactPage .contactContainer .contactImg {
+    width: 50%;
+    height: 550px;
+  }
+  .imgContainers img {
+    width: 15% !important;
+    margin-bottom: 40px !important;
+  }
+  .footerDiv img {
+    width: 30% !important;
+  }
+}
+
+/*-----------------------------------
+        media query min: 1200px
+-----------------------------------*/
+@media screen and (min-width: 1200px) {
+  .loginForm {
+    width: 55%;
+    margin: 12% auto;
+  }
+  .newUserForm {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .newUserForm .inputFields {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .newUserForm .inputFields > div {
+    width: 48% !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 400px;
+  }
+  .newUserForm .inputFields > div h3 {
+    margin-top: 10px;
+  }
+  .newUserForm .inputFields > div input {
+    margin-bottom: 0px;
+  }
+  .newUserForm .imgContainers {
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+  }
+  .newUserForm .imgContainers img {
+    width: 15%;
+    margin-bottom: 20px !important;
+  }
+  .newUserForm input {
+    font-size: 20px !important;
+  }
+  .gamePage {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .gamePage .gameProfile-andButtons-Container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 760px;
+    margin-left: 20px;
+    width: 220px;
+  }
+  .gamePage .gameProfile-andButtons-Container .game-profileInfo {
+    width: 100%;
+    margin-bottom: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gamePage .gameProfile-andButtons-Container .gameButtons {
+    width: 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .gamePage .helpPopUp {
+    width: 40%;
+    top: 200px !important;
+  }
+  .contactPage .contactContainer {
+    width: 60%;
+  }
+  .myProfilePage .myProfile {
+    width: 60%;
+  }
+  .myProfilePage .deleteProfile {
+    width: 60%;
+  }
+  .myProfileForm .updateProfile {
+    width: 60% !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .myProfileForm .updateProfile .updateProfile-inputFields {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .myProfileForm .updateProfile .updateProfile-inputFields > div {
+    width: 48% !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 400px;
+  }
+  .myProfileForm .updateProfile .updateProfile-inputFields > div h3 {
+    margin-top: 10px;
+  }
+  .myProfileForm .updateProfile .updateProfile-inputFields > div input {
+    margin-bottom: 0px;
+  }
+  .myProfileForm .updateProfile .imgContainers {
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+  }
+  .myProfileForm .updateProfile .imgContainers img {
+    width: 15%;
+    margin-bottom: 20px !important;
+  }
+  .myProfileForm .updateProfile > input {
+    font-size: 20px !important;
+  }
+}
+
+/*-----------------------------------
+        media query min: 1600
+-----------------------------------*/
+@media screen and (min-width: 1600px) {
+  .loginForm {
+    width: 35%;
+    margin: 9% auto;
+  }
+  .newUserForm {
+    width: 60%;
+  }
+  .newUserForm .imgContainers img {
+    width: 12% !important;
+    margin-bottom: 20px !important;
+  }
+  .myProfileForm .updateProfile .imgContainers img {
+    width: 12% !important;
+    margin-bottom: 20px !important;
+  }
+  .footerDiv img {
+    width: 20% !important;
+  }
+}

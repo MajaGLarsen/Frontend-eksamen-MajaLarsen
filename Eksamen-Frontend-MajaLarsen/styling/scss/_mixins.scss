@@ -1,0 +1,101 @@
+/*------------------------------
+        mixins with flex
+------------------------------*/
+@mixin flexColumnCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flexColumnNoCenter {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*------------------------------
+        BackgroundImages
+------------------------------*/
+@mixin centerBackgroundImage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin backgroundImage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/*------------------------------
+        Inputs and buttons
+------------------------------*/
+@mixin inputFields {
+    height: 50px;
+    border: 1px solid gray;
+    padding-left: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+}
+
+@mixin grayButtons {
+    border-radius: 8px;
+    border: none !important;
+    font-size: 18px;
+    box-shadow: $boxshadow;
+    background-color: #464646;
+    height: $mediumSize;
+    color: $whiteText;
+    width: 200px !important;
+    margin: 40px 0;
+    &:hover {
+        cursor: pointer;
+        background-color: #3b3b3b;
+    }
+}
+
+@mixin redButtons {
+    @include grayButtons();
+    background-color: #7c0000;
+    &:hover {
+        background-color: #680101;
+    }
+}
+
+@mixin greenButtons {
+    @include grayButtons();
+    background-color: #007c44;
+    &:hover {
+        background-color: #005730;
+    }
+}
+
+/*------------------------------
+        Highscore lists
+------------------------------*/
+@mixin highscoreList {
+    width: $smallScreenWidth;
+    padding-bottom: $largeSize;
+    padding-top: $smallMarginSmallTekst;
+    border-radius: 10px;
+    margin: $mediumSize 0;
+    padding-top: 30px;
+    background-color: $grayElementLowOpacity;
+    box-shadow: $boxshadow;
+    @media screen and(min-width: 1200px) {
+        width: $wideScreenWidth !important;
+    }
+}

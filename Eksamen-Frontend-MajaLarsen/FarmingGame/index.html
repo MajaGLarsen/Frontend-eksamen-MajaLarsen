@@ -1,0 +1,42 @@
+<!-- Index, midterdelen af body -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="mainJs.js" defer></script>
+    <script type="text/javascript" src="game.js" defer></script>
+    <script type="text/javascript" src="noscroll.js" defer></script>
+    <link rel="stylesheet" href="gamestyle.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+
+
+<!-- PHP til opsætning af kald til formen -->
+
+
+
+
+<!-- Container til canvas, knapper og beskeder + helper -->
+    <div class="container">
+        <div class ="center">
+                <h3>Point: <span id="points"></span></h3>
+                <div class="deathContainer">
+                    <h1 id="deadText"></h1>
+                    <h2 id="finalScore"></h2>
+                    <button onClick="window.location.reload()">Start over</button>            
+                    
+                </div>
+                <canvas id="canvas" width="720" height="720"></canvas>      
+                <p><span>&#8592;</span> to go left, <span>&#8593;</span> to go up, <span>&#8594;</span> to go right, <span>&#8595;</span> to go down, e to interact</p>
+        </div>
+    </div>
+
